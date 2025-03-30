@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Root variables & behavior */
+:root {
+  scroll-behavior: smooth;
+  /* Dark mode colors (default) */
+  --color-primary: #0a192f;
+  --color-secondary: #ffd700;
+  --color-dark: #020c1b;
+  --color-light: #ccd6f6;
+  --color-bg: #0a192f;
+  --color-text-primary: #ccd6f6;
+  --color-text-secondary: #8892b0;
+  --color-border: rgba(255, 215, 0, 0.1);
+}
+
+/* Light mode theme */
+:root.light {
+  --color-primary: #ffffff;
+  --color-secondary: #ffd700;
+  --color-dark: #ffffff;
+  --color-light: #2b2b2b;
+  --color-bg: #ffffff;
+  --color-text-primary: #2b2b2b;
+  --color-text-secondary: #4a4a4a;
+  --color-border: rgba(255, 215, 0, 0.1);
+}
+
+/* Base styles */
+body {
+  @apply bg-bg text-text-primary font-sans m-0 p-0 transition-colors duration-300;
+}
+
+/* Layout components */
+@layer components {
+  /* Section styles */
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+  
+  .section-alt {
+    @apply bg-primary dark:bg-dark;
+  }
+  
+  .container-padding {
+    @apply px-4 md:px-8 lg:px-16;
+  }
+  
+  /* Button styles */
+  .btn {
+    @apply px-6 py-3 rounded-md font-medium transition-all duration-300 cursor-pointer select-none;
+  }
+  
+  .btn-primary {
+    @apply bg-secondary text-white hover:bg-opacity-90 dark:hover:bg-opacity-80;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-secondary text-secondary hover:bg-secondary hover:bg-opacity-10;
+  }
+
+  /* Interactive elements */
+  button, 
+  a[href],
+  [role="button"],
+  .cursor-pointer {
+    cursor: pointer;
+  }
+
+  /* Card styles */
+  .card {
+    @apply bg-primary dark:bg-dark border border-border rounded-lg 
+           shadow-lg hover:shadow-xl transition-all duration-300;
+  }
+}
